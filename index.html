@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bernie Sanders for President!</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <style>
+      html {
+        background-color: #032F5D;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+      }
+      body {
+        margin: 0;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      .headline {
+        font-size: 52px;
+      }
+      .bernie {
+        width: 256px;
+        height: 256px;
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        margin-top: -128px;
+        margin-left: -128px;
+      }
+      .section {
+        position: absolute;
+        height: 50vh;
+        width: 50vw;
+        display: table;
+        overflow: hidden;
+      }
+        .section-top {
+          top: 0;
+        }
+        .section-bottom {
+          bottom: 0;
+        }
+        .section-left {
+          left: 0;
+        }
+        .section-right {
+          right: 0;
+        }
+        .section .section-inner {
+          display: table-cell;
+          vertical-align: middle;
+          transform: scale(1);
+          cursor: pointer;
+          will-change: transform;
+        }
+        .section:hover .section-inner,
+        .section.section-active .section-inner {
+          transform: scale(1.5);
+          transition: transform 300ms cubic-bezier(.19,2,1,1);
+        }
+        .section:hover .section-heading,
+        .section.section-active .section-heading {
+          background-color: rgba(255, 255, 255, 1);
+          transition: background-color 300ms ease-out;
+          color: red;
+        }
+      .section-heading {
+        padding: 0.75em;
+        border-radius: 50% 50%;
+        background-color: rgba(255, 255, 255, 0);
+        display: inline;
+        font-size: 32px;
+        will-change: background-color;
+      }
+      .modal-overlay {
+        position: absolute;
+        top: -100vh;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0,0,0,0);
+        transition: background-color 100ms linear;
+        will-change: background-color;
+      }
+        body.modal-open .modal-overlay {
+          top: 0;
+          transition: background-color 100ms ease-out;
+          background-color: rgba(0,0,0,0.3);
+        }
+      .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-width: 800px;
+        max-height: 600px;
+        background-color: white;
+        opacity: 0;
+        transform: translate(-50%, 100%);
+        will-change: transform;
+        transition: transform 100ms linear;
+        border-radius: 1px;
+        overflow-y: scroll;
+        color: black;
+        padding: 2em;
+      }
+        .modal-section {
+          display: none;
+        }
+        .modal-section.modal-section-active {
+          display: block;
+        }
+        body.modal-open .modal {
+          transition: opacity 300ms ease-out, transform 300ms ease-out;
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="headline">You don't know Bernie!</h1>
+    <img class="bernie" src="bernie-cropped.png" />
+    <div class="section section-top section-left" data-target=".electibility">
+      <div class="section-inner">
+        <h2 class="section-heading">Electibility</h2>
+      </div>
+    </div>
+    <div class="section section-top section-right" data-target=".honesty">
+      <div class="section-inner">
+        <h2 class="section-heading">Honesty</h2>
+      </div>
+    </div>
+    <div class="section section-bottom section-left" data-target=".favorability">
+      <div class="section-inner">
+        <h2 class="section-heading">Favorability</h2>
+      </div>
+    </div>
+    <div class="section section-bottom section-right" data-target=".experience">
+      <div class="section-inner">
+        <h2 class="section-heading">Experience</h2>
+      </div>
+    </div>
+    <div class="modal-overlay"></div>
+    <div class="modal">
+      <div class="modal-section electibility">
+        <h2>Electibility</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="modal-section honesty">
+        <h2>Honesty</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="modal-section favorability">
+        <h2>Favorability</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="modal-section experience">
+        <h2>Experience</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        var $body = $(document.body);
+
+        $('.modal-overlay').on('click', function() {
+          $body.removeClass('modal-open');
+          $('.modal-section-active').removeClass('modal-section-active');
+          $('.section-active').removeClass('section-active');
+        });
+
+        $('.section').on('click', function() {
+          var $this = $(this);
+          var selector = $this.data('target');
+          $this.addClass('section-active');
+
+          $('.modal-section'+selector).addClass('modal-section-active');
+          $body.addClass('modal-open');
+        });
+      });
+    </script>
+  </body>
+</html>
